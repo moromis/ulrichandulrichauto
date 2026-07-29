@@ -1,4 +1,4 @@
-const CONTACT_ENDPOINT = 'https://REPLACE_WITH_YOUR_FUNCTION_HOST/.netlify/functions/contact';
+const CONTACT_ENDPOINT = 'https://ulrichandulrichauto.netlify.app/.netlify/functions/contact';
 
 async function handleContactFormSubmit(event) {
   event.preventDefault();
