@@ -1,13 +1,26 @@
 const sgMail = require('@sendgrid/mail');
 
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS'
+};
+
 exports.handler = async function(event) {
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 204,
+      headers: CORS_HEADERS,
+      body: ''
+    };
+  }
+
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
       headers: {
-        'Allow': 'POST',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type'
+        ...CORS_HEADERS,
+        'Allow': 'POST, OPTIONS'
       },
       body: 'Method Not Allowed'
     };
@@ -19,10 +32,7 @@ exports.handler = async function(event) {
   } catch (error) {
     return {
       statusCode: 400,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type'
-      },
+      headers: CORS_HEADERS,
       body: 'Invalid JSON payload.'
     };
   }
