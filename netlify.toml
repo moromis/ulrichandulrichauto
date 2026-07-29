@@ -3,6 +3,5 @@
   functions = "functions"
 
 [context.production.environment]
-  SENDGRID_API_KEY = "${SENDGRID_API_KEY}"
   EMAIL_TO = "help@ulrichauto.com"
   EMAIL_FROM = "help@ulrichauto.com"
