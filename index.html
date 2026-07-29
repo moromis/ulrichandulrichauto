@@ -6,7 +6,7 @@
   <title>Ulrich & Ulrich Auto — Independent Subaru Specialists</title>
   <meta name="description" content="Ulrich & Ulrich Auto — Independent Subaru Specialists. Subaru repair, maintenance, head gasket replacement, brakes, tire rotations and more. Contact (509) 433-7073 or help@ulrichauto.com.">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- minimal blank favicon to avoid 404 -->
+  <link rel="icon" href="icon.png" type="image/png">
 </head>
 <body>
   <header class="site-header">
@@ -94,16 +94,9 @@
           <div class="route-panel">
             <label for="routeOrigin">Enter your address to get directions</label>
             <div class="route-input-group">
-              <input id="routeOrigin" name="routeOrigin" type="text" placeholder="Street, city, state or ZIP" autocomplete="street-address" list="routeSuggestions">
+              <input id="routeOrigin" name="routeOrigin" type="text" placeholder="Street, city, state or ZIP">
               <button id="routeButton" type="button" class="btn">Show route</button>
             </div>
-            <datalist id="routeSuggestions">
-              <option value="22305 230th St SE, Monroe, WA 98272"></option>
-              <option value="Seattle, WA"></option>
-              <option value="Everett, WA"></option>
-              <option value="Bellevue, WA"></option>
-              <option value="Snohomish, WA"></option>
-            </datalist>
           </div>
           <iframe
             id="contactMapIframe"
