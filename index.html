@@ -94,9 +94,16 @@
           <div class="route-panel">
             <label for="routeOrigin">Enter your address to get directions</label>
             <div class="route-input-group">
-              <input id="routeOrigin" name="routeOrigin" type="text" placeholder="Street, city, state or ZIP">
+              <input id="routeOrigin" name="routeOrigin" type="text" placeholder="Street, city, state or ZIP" autocomplete="street-address" list="routeSuggestions">
               <button id="routeButton" type="button" class="btn">Show route</button>
             </div>
+            <datalist id="routeSuggestions">
+              <option value="22305 230th St SE, Monroe, WA 98272"></option>
+              <option value="Seattle, WA"></option>
+              <option value="Everett, WA"></option>
+              <option value="Bellevue, WA"></option>
+              <option value="Snohomish, WA"></option>
+            </datalist>
           </div>
           <iframe
             id="contactMapIframe"
