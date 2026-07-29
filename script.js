@@ -39,9 +39,37 @@ async function handleContactFormSubmit(event) {
   }
 }
 
+function buildRouteMapUrl(origin) {
+  const destination = '47.79559924277063,-121.95933892161992';
+  const encodedOrigin = encodeURIComponent(origin);
+  const encodedDestination = encodeURIComponent(destination);
+  return `https://www.google.com/maps/dir/?api=1&origin=${encodedOrigin}&destination=${encodedDestination}&travelmode=driving`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', handleContactFormSubmit);
+  }
+
+  const routeOriginInput = document.getElementById('routeOrigin');
+  const routeButton = document.getElementById('routeButton');
+  const routeNote = document.getElementById('routeNote');
+  const mapIframe = document.getElementById('contactMapIframe');
+
+  if (routeButton && routeOriginInput && mapIframe && routeNote) {
+    routeButton.addEventListener('click', () => {
+      const origin = routeOriginInput.value.trim();
+      if (!origin) {
+        routeNote.textContent = 'Please enter your address to show the route.';
+        routeNote.style.color = '#c0392b';
+        return;
+      }
+
+      const routeUrl = buildRouteMapUrl(origin);
+      window.open(routeUrl, '_blank');
+      routeNote.textContent = `Opening directions from ${origin} to Ulrich & Ulrich Auto in Google Maps.`;
+      routeNote.style.color = 'var(--muted)';
+    });
   }
 });

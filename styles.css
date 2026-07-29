@@ -16,27 +16,41 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .tagline{margin:0; font-size:0.95rem; color:var(--muted)}
 .contact-inline a{margin-left:1rem; color:var(--text); text-decoration:none}
 .hero{padding:2.5rem 0; text-align:center}
-.hero h2{margin:0 0 0.5rem 0; font-size:1.6rem}
-.hero p{margin:0; color:var(--muted)}
+.hero-card{background:var(--accent); color:#fff; padding:2.5rem 2rem; border-radius:16px; box-shadow:0 18px 45px rgba(0,0,0,0.1);}
+.hero-card h2{margin:0 0 0.75rem 0; font-size:1.6rem}
+.hero-card p{margin:0; color:rgba(255,255,255,0.92); line-height:1.6}
 .services h3, .about h3, .contact h3{margin-top:0}
 .services-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.25rem}
 .service-card{background:#fff; padding:1.25rem; border-radius:8px; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
 .service-card h4{margin-top:0}
 .service-card ul{margin:0; padding-left:1.1rem}
 .note{color:var(--muted); margin-top:0.75rem}
-.contact-form{background:#fff; padding:1.25rem; border-radius:8px; max-width:640px}
+.contact-form{background:#fff; padding:1.25rem; border-radius:8px; max-width:640px; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
+.contact-form h4{margin-top:0; margin-bottom:1rem;}
+.contact-map .map-header h4{margin-top:0; margin-bottom:1rem;}
 .contact-form label{display:block; margin-top:0.75rem; font-weight:600; font-size:0.95rem}
 .contact-form input, .contact-form textarea{width:100%; padding:0.6rem; margin-top:0.35rem; border:1px solid #d6e2ea; border-radius:6px}
+.contact-layout{display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:start; margin-top:1.25rem}
+.contact-map{background:#fff; padding:1.25rem; border-radius:8px; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
+.contact-map .map-header{margin-bottom:1rem}
+.contact-map h4{margin:0 0 0.35rem 0}
+.contact-map p{margin:0; color:var(--muted); font-size:0.95rem}
+.route-panel{margin-bottom:1rem}
+.route-input-group{display:flex; gap:0.75rem; flex-wrap:wrap}
+.route-input-group input{flex:1 1 220px; padding:0.6rem; border:1px solid #d6e2ea; border-radius:6px}
+.route-note{margin-top:0.75rem; color:var(--muted); font-size:0.95rem}
+.contact-map iframe{width:100%; min-height:380px; border:0; border-radius:8px}
 .btn{display:inline-block; margin-top:1rem; background:var(--accent); color:#fff; padding:0.6rem 1rem; border-radius:6px; border:none; cursor:pointer}
 .form-note{color:var(--muted); font-size:0.9rem}
-.footer-cta{background:var(--accent); color:#fff; padding:1rem 0; margin-top:2rem}
-.footer-cta a{color:#fff; text-decoration:underline}
-.site-footer{padding:1rem 0; text-align:center; color:var(--muted)}
+.site-footer{padding:1rem 0; text-align:center; background:var(--accent); color:#fff}
 
 @media (max-width:900px){
   .services-grid{grid-template-columns:1fr}
   .site-header .container{flex-direction:column; align-items:flex-start; gap:0.5rem}
   .contact-inline{align-self:flex-end}
+  .contact-layout{grid-template-columns:1fr}
+  .route-input-group{flex-direction:column}
+  .route-input-group button{width:100%}
 }
 
 @media (max-width:480px){
