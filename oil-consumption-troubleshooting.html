@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Oil Consumption Troubleshooting | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Oil consumption troubleshooting for Subaru vehicles. Precise diagnosis and repair recommendations from Ulrich & Ulrich Auto.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'Oil Consumption Troubleshooting',
+        intro: [
+          'Excess oil consumption can be a sign of an underlying engine issue that should be diagnosed before it causes long-term damage.',
+          'We evaluate the engine for leaks, wear, and other common Subaru concerns so you can address the problem accurately and efficiently.'
+        ],
+        leftTitle: 'How we investigate',
+        leftItems: [
+          'Oil leak inspection',
+          'Oil level and consumption pattern review',
+          'Valve cover and gasket checks',
+          'Engine condition evaluation',
+          'Repair recommendations based on findings'
+        ],
+        rightTitle: 'Why you should fix oil consumption issues',
+        rightItems: [
+          'Prevents engine damage from low oil levels',
+          'Improves long-term engine health and reliability',
+          'Avoids repeated maintenance surprises',
+          'Helps protect performance and driving confidence'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

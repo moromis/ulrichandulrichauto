@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Battery Testing & Replacement | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Battery testing and replacement for Subaru vehicles. Reliable starting system service from Ulrich & Ulrich Auto.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'Battery Testing &amp; Replacement',
+        intro: [
+          'A healthy battery is essential for dependable starts, proper electrical system performance, and reliable driving in all seasons.',
+          'We test your battery, check charging performance, and recommend replacement when your Subaru is no longer holding the correct voltage and reserve capacity.'
+        ],
+        leftTitle: 'What we check',
+        leftItems: [
+          'Battery voltage and overall health testing',
+          'Charging system inspection and output check',
+          'Starter and electrical system review',
+          'Battery terminal condition and corrosion inspection',
+          'Replacement recommendation based on age and performance'
+        ],
+        rightTitle: 'Why you should replace a weak battery',
+        rightItems: [
+          'Helps avoid unexpected no-start situations',
+          'Protects your electrical system and reliability',
+          'Improves cold-weather starting confidence',
+          'Reduces strain on the charging and starter system'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

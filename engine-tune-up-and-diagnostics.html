@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Engine Tune-Up & Diagnostics | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Engine tune-up and diagnostics for Subaru vehicles. Honest, thorough engine performance service from Ulrich & Ulrich Auto.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'Engine Tune-Up &amp; Diagnostics',
+        intro: [
+          'When your Subaru isn’t running at its best, a proper diagnostic check can identify the cause before bigger issues develop.',
+          'We inspect the engine, ignition, and performance systems to keep your vehicle running efficiently and reliably.'
+        ],
+        leftTitle: 'Diagnostic services',
+        leftItems: [
+          'Check engine light diagnosis and reset guidance',
+          'Ignition and spark system inspection',
+          'Fuel system and performance evaluation',
+          'Sensor and drivability checks',
+          'Inspection report with repair recommendations'
+        ],
+        rightTitle: 'Why you should schedule a tune-up',
+        rightItems: [
+          'Improves engine efficiency and performance',
+          'Helps catch small issues before they become costly',
+          'Supports smoother idling and better drivability',
+          'Keeps your Subaru dependable for daily driving'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
