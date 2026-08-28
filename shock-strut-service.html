@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shock & Strut Service | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Shock and strut service for Subaru vehicles. OEM and KYB struts installed with precision by Ulrich & Ulrich Auto.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'Shock &amp; Strut Service',
+        intro: [
+          'Your Subaru’s shocks and struts help control ride comfort, handling, tire contact, and overall stability on the road.',
+          'We inspect the suspension and install quality replacement components, including OEM or KYB struts, to restore proper performance and confidence behind the wheel.'
+        ],
+        leftTitle: 'Service includes',
+        leftItems: [
+          'Recommendations based on inspection, wear, and handling',
+          'We suggest using OEM or KYB struts',
+          'Road test and final performance check',
+        ],
+        rightTitle: 'Why you should service your shocks and struts',
+        rightItems: [
+          'Improves ride comfort and vehicle control',
+          'Helps maintain tire contact and braking stability',
+          'Reduces uneven tire wear and poor handling',
+          'Supports safer, more predictable driving'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
