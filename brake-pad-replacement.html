@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Brake Pad Replacement | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Brake pad replacement and brake inspection for Subaru vehicles. Honest, quality brake service from Ulrich & Ulrich Auto.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'Brake Pad Replacement',
+        intro: [
+          'Brakes are essential to safety, and worn pads can lead to reduced stopping power, uneven braking, and rotor damage if ignored.',
+          'We inspect brake wear, recommend the proper repair, and complete repairs with attention to proper fitment, performance, and safe road handling.'
+        ],
+        leftTitle: 'Brake service includes',
+        leftItems: [
+          'Noise, vibration, and stopping performance evaluation',
+          'Brake pad inspection and replacement, with rotors as needed',
+          'Brake hardware and caliper check and replacement as needed',
+          'Road-test and final inspection'
+        ],
+        rightTitle: 'Why you should replace your brake pads',
+        rightItems: [
+          'Improves stopping power and safety on the road',
+          'Prevents excessive rotor wear and more costly repairs',
+          'Reduces brake noise and vibration while driving',
+          'Helps ensure predictable braking in all conditions'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

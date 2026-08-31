@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>All-Wheel Drive & Differential Service | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="All-wheel-drive and differential service for Subaru vehicles. Trust Ulrich & Ulrich Auto for drivetrain maintenance and repair.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'All-Wheel Drive &amp; Differential Service',
+        intro: [
+          'Your Subaru’s drivetrain works hard to deliver traction, stability, and smooth power delivery in daily driving and changing road conditions.',
+          'Regular AWD and differential service helps protect critical drivetrain components and keeps your vehicle performing as designed.'
+        ],
+        leftTitle: 'Service includes',
+        leftItems: [
+          'Warning sign inspection and recommendations',
+          'Noise, vibration, and drivability review',
+          'AWD system evaluation and leak checks',
+          'Fluid inspection and service for differentials',
+          'Maintenance guidance for long-term drivetrain health'
+        ],
+        rightTitle: 'Why you should service your AWD and differential',
+        rightItems: [
+          'Protects drivetrain longevity and performance',
+          'Improves traction and stability in changing conditions',
+          'Helps prevent costly wear or damage',
+          'Supports reliable year-round Subaru performance'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

@@ -9,16 +9,7 @@
   <link rel="icon" href="icon.png" type="image/png">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="brand">Ulrich &amp; Ulrich Auto</h1>
-      <p class="tagline">Independent Subaru Specialists</p>
-      <nav class="contact-inline">
-        <a href="tel:+15094337073" aria-label="Call (509) 433-7073">(509) 433-7073</a>
-        <a href="mailto:kevin@ulrichauto.com">kevin@ulrichauto.com</a>
-      </nav>
-    </div>
-  </header>
+  <div data-fragment="components/header.html"></div>
 
   <main>
     <section class="hero">
@@ -36,22 +27,23 @@
         <div class="service-card">
           <h4>General Maintenance</h4>
           <ul>
-            <li>Oil changes & fluid checks</li>
-            <li>Brake inspection & replacement</li>
-            <li>Timing belt / timing chain service</li>
-            <li>Battery testing & replacement</li>
-            <li>Engine tune-ups and diagnostics</li>
+            <li><a href="oil-change.html">Oil change & fluid checks</a></li>
+            <li><a href="brake-pad-replacement.html">Brake pad replacement</a></li>
+            <li><a href="timing-belt-replacement.html">Timing belt replacement</a></li>
+            <li><a href="battery-testing-and-replacement.html">Battery testing & replacement</a></li>
+            <li><a href="engine-tune-up-and-diagnostics.html">Engine tune-ups and diagnostics</a></li>
+            <li><a href="shock-strut-service.html">Shock &amp; strut service</a></li>
           </ul>
         </div>
 
         <div class="service-card">
           <h4>Subaru-Specific Services</h4>
           <ul>
-            <li>Head gasket replacement & repair</li>
-            <li>Timing belt and chain service for Subaru engines</li>
-            <li>Oil consumption troubleshooting</li>
-            <li>All-wheel-drive and differential service</li>
-            <li>OEM parts sourcing and installation</li>
+            <li><a href="head-gasket-replacement.html">Head gasket replacement & repair</a></li>
+            <li><a href="subaru-timing-belt-and-chain-service.html">Timing belt and chain service for Subaru engines</a></li>
+            <li><a href="oil-consumption-troubleshooting.html">Oil consumption troubleshooting</a></li>
+            <li><a href="all-wheel-drive-and-differential-service.html">All-wheel-drive and differential service</a></li>
+            <li><a href="oem-parts-sourcing-and-installation.html">OEM parts sourcing and installation</a></li>
           </ul>
         </div>
       </div>
@@ -111,12 +103,10 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>&copy; 2026 Ulrich &amp; Ulrich Auto — All rights reserved.</small>
-    </div>
-  </footer>
+  <div data-fragment="components/footer.html"></div>
 
+  <script src="site-shell.js"></script>
   <script src="script.js"></script>
+  <script src="load-fragments.js"></script>
 </body>
 </html>

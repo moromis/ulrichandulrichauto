@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Head Gasket Replacement | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Subaru head gasket repair and replacement services by Ulrich & Ulrich Auto. Experienced engine diagnosis and repair for reliable performance.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'Head Gasket Replacement &amp; Repair',
+        intro: [
+          'A failed head gasket can cause overheating, coolant loss, white smoke, and engine performance issues if not addressed quickly. It\'s also a common issue on certain Subaru engines, and early diagnosis is key to preventing long-term engine damage -- though the problem doesn\'t always lie with the head gaskets, and we know how to tell the difference and avoid making unnecessary repairs, saving you money.',
+          'We diagnose the root cause of the problem and perform repairs in order to restore proper compression, cooling, and long-term reliability.'
+        ],
+        leftTitle: 'Common signs that indicate a head gasket issue',
+        leftItems: [
+          'Coolant loss or overheating',
+          'White exhaust smoke',
+          'Milky oil or coolant contamination',
+          'Engine misfire or poor performance',
+          'Compression irregularities'
+        ],
+        rightTitle: 'Why you should replace a head gasket',
+        rightItems: [
+          'Prevents overheating and coolant loss',
+          'Restores proper engine compression and performance',
+          'Helps avoid serious internal engine damage',
+          'Improves reliability and long-term engine health'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

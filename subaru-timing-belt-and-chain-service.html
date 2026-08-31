@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Subaru Timing Belt & Chain Service | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Subaru timing belt and chain service for reliable engine timing, performance, and long-term durability.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'Subaru Timing Belt &amp; Chain Service',
+        intro: [
+          'Subaru engines rely on precise timing components to keep the engine running correctly and efficiently.',
+          'We inspect timing-related components and perform the needed service to reduce the risk of failure and protect engine reliability.',
+          'The timing belt should be replaced every 100,000 miles.'
+        ],
+        leftTitle: 'Service scope',
+        leftItems: [
+          'Timing belt or chain inspection',
+          'Tensioner and idler or chain guide assessment',
+          'Related accessory and water pump review',
+          'Engine timing verification after service',
+          'Maintenance based on Subaru specifications'
+        ],
+        rightTitle: 'Why you should service your Subaru timing components',
+        rightItems: [
+          'Protects against costly engine timing failures',
+          'Improves long-term reliability and engine durability',
+          'Helps maintain proper engine performance',
+          'Supports confidence in daily driving and peace of mind'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

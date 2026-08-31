@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Oil Change Service | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Professional oil change and fluid service for Subaru vehicles in the Snohomish County area. Honest service and quality maintenance from Ulrich & Ulrich Auto.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'Oil Change &amp; Fluid Service',
+        intro: [
+          'Regular oil changes are one of the easiest ways to protect your engine, improve reliability, and keep your Subaru running smoothly for years to come.',
+          'At Ulrich &amp; Ulrich Auto, we perform thorough oil and fluid service using the correct oil type, filter, and inspection points for your specific Subaru model.'
+        ],
+        leftTitle: 'What’s included',
+        leftItems: [
+          'Visual check for leaks, wear, and fluid condition',
+          'Inspection of drain plug and undercarriage components',
+          'Engine oil and filter replacement',
+          'Fluid level inspection and top-off as needed',
+          'Maintenance reminder review and service recommendations'
+        ],
+        rightTitle: 'Why you should change your oil regularly',
+        rightItems: [
+          'Reduces engine wear',
+          'Helps maintain fuel efficiency and smooth engine performance',
+          'Prevents long-term damage caused by dirty or degraded oil',
+          'Supports dependable driving and stronger engine reliability'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

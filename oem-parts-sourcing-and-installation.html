@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OEM Parts Sourcing & Installation | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="OEM parts sourcing and installation for Subaru vehicles. Quality parts and professional installation from Ulrich & Ulrich Auto.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'OEM Parts Sourcing &amp; Installation',
+        intro: [
+          'Using the right parts matters when you want your Subaru to perform as intended and maintain long-term reliability.',
+          'We source the correct OEM components and complete installation with attention to fit, function, and proper vehicle specifications.'
+        ],
+        leftTitle: 'What we provide',
+        leftItems: [
+          'OEM parts sourcing for Subaru models',
+          'Proper fitment and installation checks',
+          'Part compatibility review',
+          'Quality workmanship and final inspection',
+          'Maintenance recommendations after installation'
+        ],
+        rightTitle: 'Why you should use OEM parts',
+        rightItems: [
+          'Helps maintain factory fit and function',
+          'Improves reliability and part longevity',
+          'Supports correct Subaru performance and drivability',
+          'Reduces the risk of incorrect aftermarket fitment'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

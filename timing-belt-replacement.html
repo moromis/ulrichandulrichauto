@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Timing Belt Replacement | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Timing belt replacement and engine timing service for Subaru vehicles. Trust Ulrich & Ulrich Auto for precise maintenance and repair.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+  <div id="service-page-root"></div>
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="load-fragments.js"></script>
+  <script src="service-page-template.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServicePage({
+        title: 'Timing Belt Replacement',
+        intro: [
+          'Timing belts are a critical part of engine operation and should be replaced at the manufacturer’s recommended interval to prevent major internal engine damage.',
+          'Our team inspects the timing system, performs the appropriate replacement service, and checks associated components to help maintain dependable engine performance.'
+        ],
+        leftTitle: 'Service highlights',
+        leftItems: [
+          'Inspection of timing belt, tensioners, idlers, and related components',
+          'Water pump and accessory checks and replacement when applicable',
+          'Timing belt replacement to factory specifications',
+          'Engine timing verification and road test'
+        ],
+        rightTitle: 'Why you should replace your timing belt',
+        rightItems: [
+          'Helps prevent sudden engine damage and costly repairs',
+          'Improves long-term reliability and engine durability',
+          'Protects critical timing components from wear and failure',
+          'Supports smooth, predictable performance and peace of mind'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

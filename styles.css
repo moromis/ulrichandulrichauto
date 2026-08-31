@@ -25,7 +25,21 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .service-card{background:#fff; padding:1.25rem; border-radius:8px; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
 .service-card h4{margin-top:0}
 .service-card ul{margin:0; padding-left:1.1rem}
+.service-card a{color:var(--accent); text-decoration:none; font-weight:600}
+.service-card a:hover,.service-card a:focus{color:var(--accent-2); text-decoration:underline}
 .note{color:var(--muted); margin-top:0.75rem}
+.service-page{padding:2rem 0 3rem}
+.service-page .container{max-width:860px}
+.service-hero{background:#fff; border-radius:16px; padding:2rem; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
+.service-hero h1{margin-top:0; color:var(--accent); font-size:2rem}
+.service-hero p{margin-bottom:1rem; color:var(--muted)}
+.service-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:1.5rem}
+.service-panel{background:#fff; border-radius:12px; padding:1.25rem; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
+.service-panel h2{margin-top:0; font-size:1.1rem}
+.service-panel ul{margin:0; padding-left:1.1rem}
+.service-links{display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.25rem}
+.service-links a,.back-link{display:inline-block; padding:0.7rem 1rem; background:var(--accent); color:#fff; border-radius:6px; text-decoration:none; font-weight:600}
+.service-links a:hover,.back-link:hover,.service-links a:focus,.back-link:focus{background:var(--accent-2); text-decoration:none}
 .contact-form{background:#fff; padding:1.25rem; border-radius:8px; max-width:640px; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
 .contact-form h4{margin-top:0; margin-bottom:1rem;}
 .contact-map .map-header h4{margin-top:0; margin-bottom:1rem;}
