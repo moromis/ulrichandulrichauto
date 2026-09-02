@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Book an Appointment | Ulrich & Ulrich Auto</title>
+  <meta name="description" content="Request an appointment for Subaru service and repairs at Ulrich & Ulrich Auto. Schedule maintenance, diagnostics, and repair work with our experienced team.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <div data-fragment="components/header.html"></div>
+
+  <main class="booking-page">
+    <div class="container">
+      <section class="booking-hero">
+        <p class="eyebrow">Book an appointment</p>
+        <h1>Schedule service for your vehicle</h1>
+        <p>Tell us what your vehicle needs and we’ll help you plan the next step. Whether it’s routine maintenance or troubleshooting an issue, we’re ready to help.</p>
+      </section>
+
+      <section class="availability-panel" aria-labelledby="availabilityHeading">
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2CMmFnTvkn9lkgp0AvVBv6Pn99KUqy9lXSoW7odFWcW_jQPXQM8BQ4YVBk_nGHk8BeSgLzkdOE?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+        <!-- end Google Calendar Appointment Scheduling -->
+      </section>
+    </div>
+  </main>
+
+  <div data-fragment="components/footer.html"></div>
+
+  <script src="site-shell.js"></script>
+  <script src="script.js"></script>
+  <script src="load-fragments.js"></script>
+</body>
+</html>

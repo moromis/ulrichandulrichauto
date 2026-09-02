@@ -44,7 +44,7 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .contact-form h4{margin-top:0; margin-bottom:1rem;}
 .contact-map .map-header h4{margin-top:0; margin-bottom:1rem;}
 .contact-form label{display:block; margin-top:0.75rem; font-weight:600; font-size:0.95rem}
-.contact-form input, .contact-form textarea{width:100%; padding:0.6rem; margin-top:0.35rem; border:1px solid #d6e2ea; border-radius:6px}
+.contact-form input, .contact-form textarea, .booking-form input, .booking-form textarea, .booking-form select{width:100%; padding:0.7rem 0.8rem; margin-top:0.35rem; border:1px solid #d6e2ea; border-radius:6px; font:inherit}
 .contact-layout{display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:start; margin-top:1.25rem}
 .contact-map{background:#fff; padding:1.25rem; border-radius:8px; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
 .contact-map .map-header{margin-bottom:1rem}
@@ -58,7 +58,46 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .contact-map iframe{width:100%; min-height:380px; border:0; border-radius:8px}
 .btn{display:inline-block; margin-top:1rem; background:var(--accent); color:#fff; padding:0.6rem 1rem; border-radius:6px; border:none; cursor:pointer}
 .form-note{color:var(--muted); font-size:0.9rem}
+.booking-page{padding:2rem 0 3rem}
+.booking-hero{max-width:760px; margin:0 auto 1.5rem; text-align:center}
+.eyebrow{margin:0 0 0.5rem; text-transform:uppercase; letter-spacing:0.12em; font-size:0.8rem; font-weight:700; color:var(--accent)}
+.booking-hero h1{margin:0 0 0.75rem; color:var(--accent); font-size:clamp(2rem, 4vw, 3rem)}
+.booking-hero p{margin:0; color:var(--muted)}
+.availability-panel{max-width:980px; margin:0 auto 1.5rem; background:#fff; border-radius:16px; padding:1.5rem; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
+.availability-header{display:flex; justify-content:space-between; gap:1rem; align-items:end; flex-wrap:wrap; margin-bottom:1rem}
+.availability-header h2{margin:0; color:var(--accent)}
+.availability-header a{color:var(--accent); font-weight:600; text-decoration:none}
+.availability-layout{display:grid; grid-template-columns:minmax(0, 1.8fr) minmax(220px, 1fr); gap:1.25rem; align-items:start}
+.calendar-card{background:#f5f9fc; border:1px solid #dfeaf3; border-radius:12px; padding:1rem}
+.calendar-toolbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem}
+.calendar-toolbar h3{margin:0; color:var(--text)}
+.calendar-nav{border:1px solid #d3dfeb; background:#fff; border-radius:8px; width:36px; height:36px; cursor:pointer; font-size:1.1rem; color:var(--accent)}
+.calendar-weekdays, .calendar-grid{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); gap:0.4rem}
+.calendar-weekdays{margin-bottom:0.5rem; font-size:0.8rem; color:var(--muted); font-weight:700; text-align:center}
+.calendar-grid button{display:flex; align-items:center; justify-content:center; min-height:52px; border:1px solid #dfeaf3; border-radius:10px; background:#fff; cursor:pointer; color:var(--text); font-weight:600}
+.calendar-grid button:hover:not(:disabled){border-color:var(--accent); color:var(--accent)}
+.calendar-grid button.is-muted{opacity:0.45}
+.calendar-grid button.is-blocked{background:#fde8e8; border-color:#f5b7b1; color:#922b21}
+.calendar-grid button.is-selected{background:var(--accent); color:#fff; border-color:var(--accent)}
+.calendar-grid button:disabled{cursor:not-allowed; opacity:0.8}
+.availability-summary{background:#f7fafc; border:1px solid #e0ebf3; border-radius:12px; padding:1rem; min-height:100%}
+.availability-summary h3{margin-top:0; margin-bottom:0.5rem}
+.availability-summary p{margin:0.4rem 0; color:var(--muted)}
+.availability-summary #selectedDateLabel{font-weight:700; color:var(--text)}
+.availability-note{font-size:0.85rem}
+.booking-form{max-width:980px; margin:0 auto; background:#fff; border-radius:16px; padding:1.5rem; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
+.booking-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1rem 1.25rem}
+.field-group{display:flex; flex-direction:column}
+.field-full{grid-column:1 / -1}
+.form-actions{display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-top:1rem}
+.form-actions .btn{margin-top:0}
+.form-note a{color:var(--accent); text-decoration:none; font-weight:600}
 .site-footer{padding:1rem 0; text-align:center; background:var(--accent); color:#fff}
+
+@media (max-width:900px){
+  .availability-layout{grid-template-columns:1fr}
+  .booking-grid{grid-template-columns:1fr}
+}
 
 @media (max-width:900px){
   .services-grid{grid-template-columns:1fr}
