@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error('Unable to send message.');
         }
 
+        contactForm.innerHTML = '<p class="form-success-message">Thank you for your message! We will get back to you shortly.</p>';
         showFormMessagePopup('Returning to page in 5 seconds', 5);
-        contactForm.reset();
       } catch (error) {
         showFormMessagePopup('There was a problem sending your message. Please call or email us directly.');
       }
