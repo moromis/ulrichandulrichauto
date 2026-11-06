@@ -1,44 +1,3 @@
-const CONTACT_ENDPOINT = 'https://ulrichandulrichauto.netlify.app/.netlify/functions/contact';
-
-async function handleContactFormSubmit(event) {
-  event.preventDefault();
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  if (!name || !email || !message) {
-    alert('Please complete all fields.');
-    return;
-  }
-
-  if (CONTACT_ENDPOINT.includes('REPLACE_WITH_YOUR_FUNCTION_HOST')) {
-    alert('Contact endpoint is not configured yet. Please update script.js with your deployed function URL.');
-    return;
-  }
-
-  try {
-    const response = await fetch(CONTACT_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name, email, message })
-    });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(errorText || 'Failed to submit contact form');
-    }
-
-    document.getElementById('contactForm').reset();
-    alert('Message sent successfully. We will respond as soon as possible.');
-  } catch (error) {
-    console.error(error);
-    alert('Unable to send the message right now. Please email kevin@ulrichauto.com or call (509) 433-7073.');
-  }
-}
-
 function buildRouteMapUrl(origin) {
   const destination = '47.79559924277063,-121.95933892161992';
   const encodedOrigin = encodeURIComponent(origin);
@@ -55,15 +14,95 @@ function buildRouteMapUrl(origin) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', handleContactFormSubmit);
-  }
-
   const routeOriginInput = document.getElementById('routeOrigin');
   const routeButton = document.getElementById('routeButton');
   const routeNote = document.getElementById('routeNote');
   const mapIframe = document.getElementById('contactMapIframe');
+  const contactForm = document.getElementById('contactForm');
+  const formMessagePopup = document.getElementById('formMessagePopup');
+  let autoCloseTimer = null;
+
+  const clearAutoCloseTimer = () => {
+    if (autoCloseTimer) {
+      clearInterval(autoCloseTimer);
+      autoCloseTimer = null;
+    }
+  };
+
+  const hideFormMessagePopup = () => {
+    if (!formMessagePopup) return;
+    clearAutoCloseTimer();
+    formMessagePopup.hidden = true;
+    formMessagePopup.setAttribute('aria-hidden', 'true');
+  };
+
+  const showFormMessagePopup = (message, seconds = 0) => {
+    if (!formMessagePopup) return;
+    const messageText = formMessagePopup.querySelector('p');
+    if (messageText) {
+      messageText.textContent = message;
+    }
+    formMessagePopup.hidden = false;
+    formMessagePopup.setAttribute('aria-hidden', 'false');
+
+    clearAutoCloseTimer();
+    if (seconds <= 0) return;
+
+    let remainingSeconds = seconds;
+    autoCloseTimer = setInterval(() => {
+      remainingSeconds -= 1;
+      if (messageText) {
+        messageText.textContent = `Returning to page in ${remainingSeconds} second${remainingSeconds === 1 ? '' : 's'}`;
+      }
+
+      if (remainingSeconds <= 0) {
+        hideFormMessagePopup();
+      }
+    }, 1000);
+  };
+
+  if (formMessagePopup) {
+    const closeButton = formMessagePopup.querySelector('.form-message-popup__close');
+    closeButton?.addEventListener('click', hideFormMessagePopup);
+    formMessagePopup.addEventListener('click', (event) => {
+      if (event.target === formMessagePopup) {
+        hideFormMessagePopup();
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !formMessagePopup.hidden) {
+        hideFormMessagePopup();
+      }
+    });
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const body = new URLSearchParams(formData).toString();
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body
+        });
+
+        if (!response.ok) {
+          throw new Error('Unable to send message.');
+        }
+
+        contactForm.innerHTML = '<p class="form-success-message">Thank you for your message! We will get back to you shortly.</p>';
+        showFormMessagePopup('Returning to page in 5 seconds', 5);
+      } catch (error) {
+        showFormMessagePopup('There was a problem sending your message. Please call or email us directly.');
+      }
+    });
+  }
 
   if (routeButton && routeOriginInput && mapIframe && routeNote) {
     routeButton.addEventListener('click', () => {

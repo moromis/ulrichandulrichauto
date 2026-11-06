@@ -61,7 +61,12 @@
 
     <section class="contact container" id="contact">
       <div class="contact-layout">
-        <form id="contactForm" class="contact-form">
+        <form id="contactForm" class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p hidden>
+            <label>Don’t fill this in if you’re human: <input name="bot-field"></label>
+          </p>
+
           <h4>Contact Us</h4>
           <label for="name">Your name</label>
           <input id="name" name="name" type="text" required>
@@ -104,6 +109,14 @@
   </main>
 
   <div data-fragment="components/footer.html"></div>
+
+  <div id="formMessagePopup" class="form-message-popup" role="dialog" aria-modal="true" aria-live="polite" hidden>
+    <div class="form-message-popup__content">
+      <button type="button" class="form-message-popup__close" aria-label="Close popup">×</button>
+      <h4>Message Sent</h4>
+      <p>Thanks! Your message was sent successfully.</p>
+    </div>
+  </div>
 
   <script src="site-shell.js"></script>
   <script src="script.js"></script>
