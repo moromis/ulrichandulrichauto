@@ -18,6 +18,67 @@ document.addEventListener('DOMContentLoaded', () => {
   const routeButton = document.getElementById('routeButton');
   const routeNote = document.getElementById('routeNote');
   const mapIframe = document.getElementById('contactMapIframe');
+  const contactForm = document.getElementById('contactForm');
+  const formMessagePopup = document.getElementById('formMessagePopup');
+
+  const hideFormMessagePopup = () => {
+    if (!formMessagePopup) return;
+    formMessagePopup.hidden = true;
+    formMessagePopup.setAttribute('aria-hidden', 'true');
+  };
+
+  const showFormMessagePopup = (message) => {
+    if (!formMessagePopup) return;
+    const messageText = formMessagePopup.querySelector('p');
+    if (messageText) {
+      messageText.textContent = message;
+    }
+    formMessagePopup.hidden = false;
+    formMessagePopup.setAttribute('aria-hidden', 'false');
+  };
+
+  if (formMessagePopup) {
+    const closeButton = formMessagePopup.querySelector('.form-message-popup__close');
+    closeButton?.addEventListener('click', hideFormMessagePopup);
+    formMessagePopup.addEventListener('click', (event) => {
+      if (event.target === formMessagePopup) {
+        hideFormMessagePopup();
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !formMessagePopup.hidden) {
+        hideFormMessagePopup();
+      }
+    });
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const body = new URLSearchParams(formData).toString();
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body
+        });
+
+        if (!response.ok) {
+          throw new Error('Unable to send message.');
+        }
+
+        showFormMessagePopup('Thanks! Your message was sent successfully.');
+        contactForm.reset();
+      } catch (error) {
+        showFormMessagePopup('There was a problem sending your message. Please call or email us directly.');
+      }
+    });
+  }
 
   if (routeButton && routeOriginInput && mapIframe && routeNote) {
     routeButton.addEventListener('click', () => {
