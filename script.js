@@ -20,14 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const mapIframe = document.getElementById('contactMapIframe');
   const contactForm = document.getElementById('contactForm');
   const formMessagePopup = document.getElementById('formMessagePopup');
+  let autoCloseTimer = null;
+
+  const clearAutoCloseTimer = () => {
+    if (autoCloseTimer) {
+      clearInterval(autoCloseTimer);
+      autoCloseTimer = null;
+    }
+  };
 
   const hideFormMessagePopup = () => {
     if (!formMessagePopup) return;
+    clearAutoCloseTimer();
     formMessagePopup.hidden = true;
     formMessagePopup.setAttribute('aria-hidden', 'true');
   };
 
-  const showFormMessagePopup = (message) => {
+  const showFormMessagePopup = (message, seconds = 0) => {
     if (!formMessagePopup) return;
     const messageText = formMessagePopup.querySelector('p');
     if (messageText) {
@@ -35,6 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     formMessagePopup.hidden = false;
     formMessagePopup.setAttribute('aria-hidden', 'false');
+
+    clearAutoCloseTimer();
+    if (seconds <= 0) return;
+
+    let remainingSeconds = seconds;
+    autoCloseTimer = setInterval(() => {
+      remainingSeconds -= 1;
+      if (messageText) {
+        messageText.textContent = `Returning to page in ${remainingSeconds} second${remainingSeconds === 1 ? '' : 's'}`;
+      }
+
+      if (remainingSeconds <= 0) {
+        hideFormMessagePopup();
+      }
+    }, 1000);
   };
 
   if (formMessagePopup) {
@@ -72,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error('Unable to send message.');
         }
 
-        showFormMessagePopup('Thanks! Your message was sent successfully.');
+        showFormMessagePopup('Returning to page in 5 seconds', 5);
         contactForm.reset();
       } catch (error) {
         showFormMessagePopup('There was a problem sending your message. Please call or email us directly.');
