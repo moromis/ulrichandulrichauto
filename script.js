@@ -35,7 +35,7 @@ async function handleContactFormSubmit(event) {
     alert('Message sent successfully. We will respond as soon as possible.');
   } catch (error) {
     console.error(error);
-    alert('Unable to send the message right now. Please email help@ulrichauto.com or call (509) 433-7073.');
+    alert('Unable to send the message right now. Please email kevin@ulrichauto.com or call (509) 433-7073.');
   }
 }
 

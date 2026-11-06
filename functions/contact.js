@@ -65,8 +65,8 @@ exports.handler = async function(event) {
   sgMail.setApiKey(apiKey);
 
   const msg = {
-    to: process.env.EMAIL_TO || 'help@ulrichauto.com',
-    from: process.env.EMAIL_FROM || 'help@ulrichauto.com',
+    to: process.env.EMAIL_TO || 'kevin@ulrichauto.com',
+    from: process.env.EMAIL_FROM || 'kevin@ulrichauto.com',
     replyTo: email,
     subject: `Website contact from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
