@@ -61,7 +61,12 @@
 
     <section class="contact container" id="contact">
       <div class="contact-layout">
-        <form id="contactForm" class="contact-form">
+        <form id="contactForm" class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p hidden>
+            <label>Don’t fill this in if you’re human: <input name="bot-field"></label>
+          </p>
+
           <h4>Contact Us</h4>
           <label for="name">Your name</label>
           <input id="name" name="name" type="text" required>
