@@ -6,17 +6,14 @@ function renderServicePage(config) {
     .map((paragraph) => `<p>${paragraph}</p>`)
     .join('');
 
-<<<<<<< Updated upstream
-=======
   const imageHtml = config.image
-    ? `<img src="${config.image}" alt="${config.title}" class="service-image" loading="lazy" decoding="async" />`
+    ? `<img src="${config.image}" alt="${config.title}" class="service-image" />`
     : '';
 
   const secondaryImageHtml = config.secondaryImage
-    ? `<img src="${config.secondaryImage}" alt="${config.title}" class="service-image service-image-secondary" loading="lazy" decoding="async" />`
+    ? `<img src="${config.secondaryImage}" alt="${config.title}" class="service-image service-image-secondary" />`
     : '';
 
->>>>>>> Stashed changes
   const leftItemsHtml = (config.leftItems || [])
     .map((item) => `<li>${item}</li>`)
     .join('');
@@ -31,6 +28,7 @@ function renderServicePage(config) {
         <div class="service-hero">
           <h1>${config.title}</h1>
           ${introHtml}
+          ${imageHtml}
           <div class="service-links">
             <a href="index.html">Back to home</a>
             <a href="tel:+15094337073">Call for service</a>
@@ -48,6 +46,8 @@ function renderServicePage(config) {
             <ul>${rightItemsHtml}</ul>
           </div>
         </div>
+
+        ${secondaryImageHtml}
       </div>
     </main>
   `;
