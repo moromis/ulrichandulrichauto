@@ -1,22 +1,35 @@
 /* Simple clean responsive styles */
+
 :root{
-  --accent:#0a5f8a;
-  --accent-2:#0f7aa0;
+  --accent:#14478A;
+  --accent-2:#053a88;
   --bg:#f7f9fb;
   --text:#1b1b1b;
   --muted:#555;
   --container:1100px;
 }
+@font-face {
+  font-family: "Heavitas";
+  src: url("fonts/Heavitas.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 *{box-sizing:border-box}
-body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--text); background:var(--bg); line-height:1.45}
+body{font-family:"Heavitas", "Segoe UI", sans-serif; margin:0; color:var(--text); background:var(--bg); line-height:1.45}
+a{color:#14478A}
+a:visited{color:#053a88}
 .container{max-width:var(--container); margin:0 auto; padding:2rem}
 .site-header{background:#fff; border-bottom:1px solid #e6eef4}
-.site-header .container{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem}
+.site-header .container{position:relative; display:flex; align-items:center; justify-content:space-between; gap:0.75rem}
 .brand{font-size:1.4rem; margin:0; color:var(--accent)}
-.tagline{margin:0; font-size:0.95rem; color:var(--muted)}
-.contact-inline{display:flex; flex-wrap:wrap; gap:1rem; align-items:center}
-.contact-inline a{color:var(--text); text-decoration:none}
+.brand a{display:inline-flex; align-items:center; text-decoration:none; color:inherit}
+.brand img{display:block; max-height:54px; width:auto; max-width:100%}
+.tagline{position:absolute; left:50%; transform:translateX(-50%); margin:0; font-size:0.95rem; color:var(--muted); text-align:center; white-space:nowrap}
+.contact-inline{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.2rem; margin-left:auto; text-align:center}
+.contact-inline a{display:block; color:var(--text); text-decoration:none}
 .hero{padding:2.5rem 0; text-align:center}
+.homepage-banner{display:block; width:100%; max-height:420px; object-fit:cover; border-radius:16px; margin-bottom:1.25rem; box-shadow:0 18px 45px rgba(0,0,0,0.1)}
 .hero-card{background:var(--accent); color:#fff; padding:2.5rem 2rem; border-radius:16px; box-shadow:0 18px 45px rgba(0,0,0,0.1);}
 .hero-card h2{margin:0 0 0.75rem 0; font-size:1.6rem}
 .hero-card p{margin:0; color:rgba(255,255,255,0.92); line-height:1.6}
@@ -33,6 +46,8 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .service-hero{background:#fff; border-radius:16px; padding:2rem; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
 .service-hero h1{margin-top:0; color:var(--accent); font-size:2rem}
 .service-hero p{margin-bottom:1rem; color:var(--muted)}
+.service-image{display:block; width:100%; max-height:320px; object-fit:cover; border-radius:12px; margin:1rem 0 0; border:1px solid rgba(15,23,42,0.08)}
+.service-image-secondary{display:block; width:100%; height:auto; max-height:none; object-fit:contain; margin-top:1.5rem; border-radius:12px; border:1px solid rgba(15,23,42,0.08)}
 .service-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:1.5rem}
 .service-panel{background:#fff; border-radius:12px; padding:1.25rem; box-shadow:0 1px 2px rgba(15,23,42,0.04)}
 .service-panel h2{margin-top:0; font-size:1.1rem}
@@ -57,6 +72,14 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .route-note{margin-top:0.75rem; color:var(--muted); font-size:0.95rem}
 .contact-map iframe{width:100%; min-height:380px; border:0; border-radius:8px}
 .btn{display:inline-block; margin-top:1rem; background:var(--accent); color:#fff; padding:0.6rem 1rem; border-radius:6px; border:none; cursor:pointer}
+.form-message-popup{position:fixed; inset:0; background:rgba(15,23,42,0.5); display:flex; align-items:center; justify-content:center; z-index:1000; padding:1rem}
+.form-message-popup[hidden]{display:none}
+.form-message-popup__content{position:relative; max-width:420px; width:min(100%, 420px); background:#fff; border-radius:12px; box-shadow:0 25px 60px rgba(15,23,42,0.2); padding:1.5rem 1.25rem 1.25rem; text-align:center}
+.form-message-popup__content h4{margin:0 0 0.75rem; color:var(--accent)}
+.form-message-popup__content p{margin:0; color:var(--text)}
+.form-message-popup__close{position:absolute; top:0.35rem; right:0.6rem; border:none; background:transparent; font-size:1.8rem; line-height:1; color:var(--muted); cursor:pointer}
+.form-message-popup__close:hover,.form-message-popup__close:focus{color:var(--text)}
+.form-success-message{margin:0; padding:1.5rem 0.25rem; color:var(--text); font-size:1.05rem; line-height:1.6}
 .form-note{color:var(--muted); font-size:0.9rem}
 .booking-page{padding:2rem 0 3rem}
 .booking-hero{max-width:760px; margin:0 auto 1.5rem; text-align:center}
@@ -93,6 +116,8 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .form-actions .btn{margin-top:0}
 .form-note a{color:var(--accent); text-decoration:none; font-weight:600}
 .site-footer{padding:1rem 0; text-align:center; background:var(--accent); color:#fff}
+.footer-disclaimer{margin-top:3rem; opacity:0.9}
+.footer-disclaimer small{display:block; line-height:1; font-size:0.5rem}
 
 @media (max-width:900px){
   .availability-layout{grid-template-columns:1fr}
@@ -101,8 +126,9 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 
 @media (max-width:900px){
   .services-grid{grid-template-columns:1fr}
-  .site-header .container{flex-direction:column; align-items:center; gap:0.5rem}
-  .contact-inline{align-self:center; width:auto}
+  .site-header .container{display:flex; flex-direction:column; align-items:center; gap:0.5rem}
+  .tagline{position:static; transform:none; white-space:normal}
+  .contact-inline{align-self:center; width:auto; margin-left:0}
   .contact-inline a{margin-left:0}
   .contact-layout{grid-template-columns:1fr}
   .route-input-group{flex-direction:column}

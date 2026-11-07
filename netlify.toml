@@ -1,7 +1,7 @@
 [build]
-  publish = "."
-  functions = "functions"
+publish = "."
+functions = "functions"
 
 [context.production.environment]
-  EMAIL_TO = "help@ulrichauto.com"
-  EMAIL_FROM = "help@ulrichauto.com"
+EMAIL_TO = "kevin@ulrichauto.com"
+EMAIL_FROM = "kevin@ulrichauto.com"

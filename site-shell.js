@@ -3,7 +3,9 @@ window.SiteShell = {
     <header class="site-header">
       <div class="container">
         <h1 class="brand">
-          <a href="./index.html" aria-label="Go to the home page" style="color: inherit; text-decoration: none;">Ulrich &amp; Ulrich Auto</a>
+          <a href="./index.html" aria-label="Go to the home page">
+            <img src="logo.png" alt="Ulrich &amp; Ulrich Auto" />
+          </a>
         </h1>
         <p class="tagline">Independent Subaru Specialists</p>
         <nav class="contact-inline">
@@ -17,6 +19,9 @@ window.SiteShell = {
     <footer class="site-footer">
       <div class="container">
         <small>&copy; 2026 Ulrich &amp; Ulrich Auto — All rights reserved.</small>
+        <div class="footer-disclaimer">
+          <small>We are an independent repair facility. Any use of the Subaru name, trademarks, or model names is purely for descriptive purposes to identify the types of vehicles we service and does not imply any affiliation with or endorsement by Subaru of America.</small>
+        </div>
       </div>
     </footer>
   `
