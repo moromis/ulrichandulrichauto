@@ -1,7 +1,8 @@
 /* Simple clean responsive styles */
+
 :root{
-  --accent:#0a5f8a;
-  --accent-2:#0f7aa0;
+  --accent:#14478A;
+  --accent-2:#053a88;
   --bg:#f7f9fb;
   --text:#1b1b1b;
   --muted:#555;
@@ -16,6 +17,8 @@
 
 *{box-sizing:border-box}
 body{font-family:"Heavitas", "Segoe UI", sans-serif; margin:0; color:var(--text); background:var(--bg); line-height:1.45}
+a{color:#14478A}
+a:visited{color:#053a88}
 .container{max-width:var(--container); margin:0 auto; padding:2rem}
 .site-header{background:#fff; border-bottom:1px solid #e6eef4}
 .site-header .container{position:relative; display:flex; align-items:center; justify-content:space-between; gap:0.75rem}
@@ -79,6 +82,8 @@ body{font-family:"Heavitas", "Segoe UI", sans-serif; margin:0; color:var(--text)
 .form-success-message{margin:0; padding:1.5rem 0.25rem; color:var(--text); font-size:1.05rem; line-height:1.6}
 .form-note{color:var(--muted); font-size:0.9rem}
 .site-footer{padding:1rem 0; text-align:center; background:var(--accent); color:#fff}
+.footer-disclaimer{margin-top:3rem; opacity:0.9}
+.footer-disclaimer small{display:block; line-height:1; font-size:0.5rem}
 
 @media (max-width:900px){
   .services-grid{grid-template-columns:1fr}
